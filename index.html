@@ -71,7 +71,7 @@ h1{
 
 .row{
     display:flex;
-    height:28px;
+    height:34px;
     border-bottom:1px solid rgba(0,0,0,.05);
 }
 
@@ -89,7 +89,7 @@ h1{
     align-items:center;
     gap:8px;
     padding-left:8px;
-    font-size:15px;
+    font-size:17px;
 }
 
 .rank{
@@ -124,7 +124,7 @@ h1{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    font-size:18px;
+    font-size:24px;
     line-height:1;
 }
 
@@ -188,30 +188,24 @@ h1{
 <div class="footer">
     データは1分毎に更新予定
 </div>
-
 <script>
 
-const stocks = [];
-
-for(let i=1;i<=25;i++){
-
-    stocks.push({
-        name:"銘柄"+i,
-        change:12 - ((i-1)*0.45)
-    });
-
-}
-
-for(let i=26;i<=50;i++){
-
-    stocks.push({
-        name:"銘柄"+i,
-        change:-0.12 - ((i-26)*0.34)
-    });
-
-}
+const stocks = await fetch("stocks.json")
+    .then(r => r.json());
 
 stocks.sort((a,b)=>b.change-a.change);
+
+// 最大上昇率
+const plusStocks = stocks.filter(x => x.change > 0);
+const maxPlus = plusStocks.length
+    ? Math.max(...plusStocks.map(x => x.change))
+    : 1;
+
+// 最大下落率
+const minusStocks = stocks.filter(x => x.change < 0);
+const maxMinus = minusStocks.length
+    ? Math.max(...minusStocks.map(x => Math.abs(x.change)))
+    : 1;
 
 const rows = document.getElementById("rows");
 
@@ -244,12 +238,12 @@ stocks.forEach((stock,index)=>{
     zero.className="zero-line";
     race.appendChild(zero);
 
-    [5,25,50,75,95].forEach(pos=>{
+    [5,25,50,75,95].forEach(gridPos=>{
 
         const grid=document.createElement("div");
 
         grid.className="grid";
-        grid.style.left=pos+"%";
+        grid.style.left=gridPos+"%";
 
         race.appendChild(grid);
 
@@ -257,26 +251,30 @@ stocks.forEach((stock,index)=>{
 
     let pos;
 
-    if(stock.change>=0){
+    if(stock.change >= 0){
 
-        pos = 50 + (stock.change/20)*45;
+        pos =
+            50 +
+            (stock.change / maxPlus) * 45;
 
     }else{
 
-        pos = 50 - (Math.abs(stock.change)/20)*45;
+        pos =
+            50 -
+            (Math.abs(stock.change) / maxMinus) * 45;
 
     }
 
     const horse=document.createElement("div");
 
-    horse.className=
-        stock.change>=0
+    horse.className =
+        stock.change >= 0
         ? "horse plus"
         : "horse minus";
 
-    horse.style.left=`calc(${pos}% - 10px)`;
+    horse.style.left = `calc(${pos}% - 10px)`;
 
-    horse.innerHTML="🐎";
+    horse.innerHTML = "🐎";
 
     race.appendChild(horse);
 
@@ -291,7 +289,7 @@ function updateClock(){
 
     const now=new Date();
 
-    document.getElementById("clock").textContent=
+    document.getElementById("clock").textContent =
         now.toLocaleTimeString("ja-JP");
 
 }
@@ -301,6 +299,5 @@ updateClock();
 setInterval(updateClock,1000);
 
 </script>
-
 </body>
 </html>
