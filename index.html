@@ -189,9 +189,16 @@ h1{
     データは1分毎に更新予定
 </div>
 <script>
-
-const stocks = await fetch("stocks.json")
-    .then(r => r.json());
+const stocks = [
+    {"name":"キオクシア","change":12.0},
+    {"name":"ソフトバンクG","change":11.2},
+    {"name":"任天堂","change":8.7},
+    {"name":"ディスコ","change":7.1},
+    {"name":"三菱重工","change":5.4},
+    {"name":"トヨタ","change":3.8},
+    {"name":"オキサイド","change":-4.5},
+    {"name":"ヒーハイスト","change":-8.2}
+];
 
 stocks.sort((a,b)=>b.change-a.change);
 
