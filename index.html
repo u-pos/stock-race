@@ -8,31 +8,31 @@
 <style>
 
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
 body{
-    margin:0;
-    background:#111;
-    color:white;
     font-family:sans-serif;
+    background:#fff;
+    color:#111;
 }
 
 header{
     position:sticky;
     top:0;
-    z-index:100;
+    z-index:1000;
     background:#000;
-    padding:15px;
+    color:#fff;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border-bottom:2px solid #333;
+    padding:12px 20px;
 }
 
 h1{
-    margin:0;
-    font-size:32px;
+    font-size:40px;
 }
 
 #clock{
@@ -40,84 +40,65 @@ h1{
     font-weight:bold;
 }
 
-.container{
-    background:#fff;
-    color:#000;
+#board{
+    position:relative;
 }
 
 .scale{
     position:sticky;
-    top:76px;
-    z-index:50;
-    background:white;
+    top:72px;
+    z-index:999;
     height:40px;
-    border-bottom:2px solid #ddd;
+    background:#fff;
+    border-bottom:1px solid #ddd;
 }
 
-.scale-inner{
-    position:relative;
-    width:100%;
-    height:100%;
-}
-
-.scale-inner span{
+.scale-grid{
     position:absolute;
-    top:10px;
-    transform:translateX(-50%);
-    font-weight:bold;
-}
-
-.scale0{
-    left:50%;
-}
-
-.scale10{
-    left:75%;
-}
-
-.scale20{
-    left:100%;
-}
-
-.scaleM10{
-    left:25%;
-}
-
-.scaleM20{
-    left:0%;
-}
-
-.zero-line{
-    position:absolute;
-    left:50%;
+    left:300px;
+    right:0;
     top:0;
     bottom:0;
-    width:4px;
-    background:#333;
+}
+
+.scale-grid span{
+    position:absolute;
+    top:8px;
+    transform:translateX(-50%);
+    font-weight:bold;
+    font-size:24px;
 }
 
 .row{
     display:flex;
-    min-height:42px;
-    border-bottom:1px solid #eee;
+    height:28px;
+    border-bottom:1px solid rgba(0,0,0,.05);
 }
 
-.info{
-    width:280px;
-    padding:8px;
+.row.plus-row{
+    background:rgba(0,180,0,.05);
+}
+
+.row.minus-row{
+    background:rgba(255,0,0,.05);
+}
+
+.left{
+    width:300px;
     display:flex;
     align-items:center;
-    gap:10px;
-    font-size:18px;
+    gap:8px;
+    padding-left:8px;
+    font-size:15px;
 }
 
 .rank{
     width:40px;
-    text-align:right;
+    font-weight:bold;
 }
 
 .name{
-    width:130px;
+    width:150px;
 }
 
 .change{
@@ -126,35 +107,53 @@ h1{
     font-weight:bold;
 }
 
+.plus{
+    color:#0b8f2a;
+}
+
+.minus{
+    color:#d00000;
+}
+
 .race{
     flex:1;
     position:relative;
-    background:
-    repeating-linear-gradient(
-        to bottom,
-        #fafafa,
-        #fafafa 40px,
-        #f0f0f0 41px
-    );
 }
 
 .horse{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    font-size:26px;
+    font-size:18px;
+    line-height:1;
 }
 
-.plus{
-    color:#0b8f2a;
-}
-
-.minus{
-    color:#d80000;
-}
-
-.minus-horse{
+.horse.minus{
     transform:translateY(-50%) scaleX(-1);
+}
+
+.zero-line{
+    position:absolute;
+    left:50%;
+    top:0;
+    bottom:0;
+    width:3px;
+    background:#000;
+    z-index:10;
+}
+
+.grid{
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:1px;
+    background:#ddd;
+}
+
+.footer{
+    text-align:center;
+    padding:15px;
+    color:#666;
 }
 
 </style>
@@ -162,85 +161,109 @@ h1{
 <body>
 
 <header>
-    <h1>売買代金TOP50 騰落率レースボード</h1>
+    <h1>売買代金 TOP50 騰落率レースボード</h1>
     <div id="clock"></div>
 </header>
 
-<div class="container">
+<div id="board">
 
     <div class="scale">
-        <div class="scale-inner">
-            <span class="scaleM20">-20%</span>
-            <span class="scaleM10">-10%</span>
-            <span class="scale0">0%</span>
-            <span class="scale10">+10%</span>
-            <span class="scale20">+20%</span>
-            <div class="zero-line"></div>
+
+        <div class="scale-grid">
+
+            <span style="left:5%; color:red;">-20%</span>
+            <span style="left:25%; color:red;">-10%</span>
+            <span style="left:50%;">0%</span>
+            <span style="left:75%; color:green;">+10%</span>
+            <span style="left:95%; color:green;">+20%</span>
+
         </div>
+
     </div>
 
     <div id="rows"></div>
 
 </div>
 
+<div class="footer">
+    データは1分毎に更新予定
+</div>
+
 <script>
 
-const stocks=[];
+const stocks = [];
 
 for(let i=1;i<=25;i++){
+
     stocks.push({
-        rank:i,
         name:"銘柄"+i,
-        change:(12-(i*0.45))
+        change:12 - ((i-1)*0.45)
     });
+
 }
 
 for(let i=26;i<=50;i++){
+
     stocks.push({
-        rank:i,
         name:"銘柄"+i,
-        change:-(0.2+(i-26)*0.35)
+        change:-0.12 - ((i-26)*0.34)
     });
+
 }
 
 stocks.sort((a,b)=>b.change-a.change);
 
-const rows=document.getElementById("rows");
+const rows = document.getElementById("rows");
 
 stocks.forEach((stock,index)=>{
 
     const row=document.createElement("div");
-    row.className="row";
 
-    const info=document.createElement("div");
-    info.className="info";
+    row.className=
+        stock.change>=0
+        ? "row plus-row"
+        : "row minus-row";
 
-    const colorClass=stock.change>=0
-        ? "plus"
-        : "minus";
+    const left=document.createElement("div");
 
-    info.innerHTML=`
+    left.className="left";
+
+    left.innerHTML=`
         <div class="rank">${index+1}</div>
         <div class="name">${stock.name}</div>
-        <div class="change ${colorClass}">
+        <div class="change ${stock.change>=0?'plus':'minus'}">
             ${stock.change>0?'+':''}${stock.change.toFixed(2)}%
         </div>
     `;
 
     const race=document.createElement("div");
+
     race.className="race";
 
-    const zero=50;
+    const zero=document.createElement("div");
+    zero.className="zero-line";
+    race.appendChild(zero);
+
+    [5,25,50,75,95].forEach(pos=>{
+
+        const grid=document.createElement("div");
+
+        grid.className="grid";
+        grid.style.left=pos+"%";
+
+        race.appendChild(grid);
+
+    });
 
     let pos;
 
     if(stock.change>=0){
 
-        pos=50+(stock.change/20)*50;
+        pos = 50 + (stock.change/20)*45;
 
     }else{
 
-        pos=50-(Math.abs(stock.change)/20)*50;
+        pos = 50 - (Math.abs(stock.change)/20)*45;
 
     }
 
@@ -249,15 +272,15 @@ stocks.forEach((stock,index)=>{
     horse.className=
         stock.change>=0
         ? "horse plus"
-        : "horse minus minus-horse";
+        : "horse minus";
 
-    horse.style.left=`calc(${pos}% - 12px)`;
+    horse.style.left=`calc(${pos}% - 10px)`;
 
     horse.innerHTML="🐎";
 
     race.appendChild(horse);
 
-    row.appendChild(info);
+    row.appendChild(left);
     row.appendChild(race);
 
     rows.appendChild(row);
@@ -268,11 +291,13 @@ function updateClock(){
 
     const now=new Date();
 
-    document.getElementById("clock").innerHTML=
+    document.getElementById("clock").textContent=
         now.toLocaleTimeString("ja-JP");
+
 }
 
 updateClock();
+
 setInterval(updateClock,1000);
 
 </script>
