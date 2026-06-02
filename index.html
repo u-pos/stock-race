@@ -198,9 +198,8 @@ h1{
 </div>
 <script>
 
-const stocks = await fetch(
-    "https://stock-race-worker.xxx.workers.dev"
-).then(r => r.json());
+const stocks = await fetch("stocks.json")
+    .then(r => r.json());
     
 stocks.sort((a,b)=>b.change-a.change);
 
