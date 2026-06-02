@@ -93,12 +93,17 @@ h1{
 }
 
 .rank{
-    width:40px;
-    font-weight:bold;
+    width:35px;
+}
+
+.code{
+    width:55px;
+    color:#666;
+    font-size:14px;
 }
 
 .name{
-    width:150px;
+    width:160px;
 }
 
 .change{
@@ -193,8 +198,9 @@ h1{
 </div>
 <script>
 
-const stocks = await fetch("stocks.json")
-    .then(r => r.json());
+const stocks = await fetch(
+    "https://stock-race-worker.xxx.workers.dev"
+).then(r => r.json());
     
 stocks.sort((a,b)=>b.change-a.change);
 
@@ -227,8 +233,9 @@ stocks.forEach((stock,index)=>{
 
     left.innerHTML=`
         <div class="rank">${index+1}</div>
+        <div class="code">${stock.code}</div>
         <div class="name">${stock.name}</div>
-        <div class="change ${stock.change>=0?'plus':'minus'}">
+        <div class="change">
             ${stock.change>0?'+':''}${stock.change.toFixed(2)}%
         </div>
     `;
