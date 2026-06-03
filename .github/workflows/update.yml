@@ -39,4 +39,3 @@ steps:
       git diff --cached --quiet || git commit -m "Auto update stocks"
 
       git push
-```
