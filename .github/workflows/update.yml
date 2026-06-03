@@ -2,8 +2,7 @@ name: Update Stock Data
 
 on:
 schedule:
-- cron: '*/5 0-6 * * 1-5'
-
+- cron: '*/15 0-6 * * 1-5'
 workflow_dispatch:
 
 permissions:
@@ -15,30 +14,30 @@ runs-on: ubuntu-latest
 
 ```
 steps:
-  - name: Checkout
+  - name: Checkout repository
     uses: actions/checkout@v4
 
   - name: Setup Python
     uses: actions/setup-python@v5
     with:
-      python-version: '3.11'
+      python-version: "3.11"
 
-  - name: Install packages
+  - name: Install dependencies
     run: |
       pip install requests beautifulsoup4
 
-  - name: Run update.py
+  - name: Run updater
     run: |
       python update.py
 
-  - name: Commit updated stocks.json
+  - name: Commit changes
     run: |
       git config user.name "github-actions"
       git config user.email "github-actions@github.com"
 
       git add stocks.json
 
-      git diff --cached --quiet || git commit -m "auto update stocks"
+      git diff --cached --quiet || git commit -m "Auto update stocks"
 
       git push
 ```
