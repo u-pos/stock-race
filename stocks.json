@@ -1,302 +1,302 @@
 [
   {
-    "rank": 29,
-    "code": "7735",
-    "name": "スクリン",
-    "change": 13.52
-  },
-  {
-    "rank": 39,
+    "rank": 41,
     "code": "7220",
     "name": "武蔵精密工業",
-    "change": 13.11
+    "change": 18.2
   },
   {
-    "rank": 4,
+    "rank": 27,
+    "code": "7735",
+    "name": "スクリン",
+    "change": 18.16
+  },
+  {
+    "rank": 6,
+    "code": "8035",
+    "name": "東京エレクトロン",
+    "change": 13.5
+  },
+  {
+    "rank": 15,
+    "code": "6723",
+    "name": "ルネサス",
+    "change": 10.93
+  },
+  {
+    "rank": 3,
     "code": "5803",
     "name": "フジクラ",
-    "change": 12.31
+    "change": 10.8
   },
   {
     "rank": 30,
-    "code": "6526",
-    "name": "ソシオネクスト",
-    "change": 10.04
-  },
-  {
-    "rank": 7,
-    "code": "8035",
-    "name": "東京エレクトロン",
-    "change": 10.02
-  },
-  {
-    "rank": 13,
-    "code": "6723",
-    "name": "ルネサス",
-    "change": 9.47
-  },
-  {
-    "rank": 46,
-    "code": "6963",
-    "name": "ローム",
-    "change": 8.12
-  },
-  {
-    "rank": 33,
-    "code": "6525",
-    "name": "ＫＯＫＵＳＡＩ",
-    "change": 7.93
-  },
-  {
-    "rank": 47,
-    "code": "6301",
-    "name": "小松製作所",
-    "change": 7.21
-  },
-  {
-    "rank": 31,
     "code": "6752",
     "name": "パナソニックＨＤ",
-    "change": 7.07
+    "change": 9.74
   },
   {
-    "rank": 11,
-    "code": "5802",
-    "name": "住友電気工業",
-    "change": 6.72
-  },
-  {
-    "rank": 32,
-    "code": "7267",
-    "name": "本田技研工業",
-    "change": 6.63
-  },
-  {
-    "rank": 22,
-    "code": "4004",
-    "name": "レゾナックＨＤ",
-    "change": 6.62
-  },
-  {
-    "rank": 10,
-    "code": "6920",
-    "name": "レーザーテック",
-    "change": 6.57
-  },
-  {
-    "rank": 18,
-    "code": "5016",
-    "name": "ＪＸ金属",
-    "change": 6.56
+    "rank": 37,
+    "code": "6963",
+    "name": "ローム",
+    "change": 9.42
   },
   {
     "rank": 12,
     "code": "6146",
     "name": "ディスコ",
-    "change": 5.84
+    "change": 8.89
   },
   {
-    "rank": 49,
-    "code": "5713",
-    "name": "住友金属鉱山",
-    "change": 5.71
+    "rank": 47,
+    "code": "6301",
+    "name": "小松製作所",
+    "change": 8.74
   },
   {
     "rank": 40,
-    "code": "6971",
-    "name": "京セラ",
-    "change": 5.7
+    "code": "5201",
+    "name": "ＡＧＣ",
+    "change": 8.5
   },
   {
-    "rank": 6,
-    "code": "5801",
-    "name": "古河電気工業",
-    "change": 5.46
-  },
-  {
-    "rank": 38,
+    "rank": 39,
     "code": "6506",
     "name": "安川電機",
-    "change": 5.45
+    "change": 8.49
+  },
+  {
+    "rank": 10,
+    "code": "6920",
+    "name": "レーザーテック",
+    "change": 8.36
+  },
+  {
+    "rank": 34,
+    "code": "6525",
+    "name": "ＫＯＫＵＳＡＩ",
+    "change": 8.15
+  },
+  {
+    "rank": 16,
+    "code": "5802",
+    "name": "住友電気工業",
+    "change": 8.11
+  },
+  {
+    "rank": 21,
+    "code": "5016",
+    "name": "ＪＸ金属",
+    "change": 7.99
+  },
+  {
+    "rank": 19,
+    "code": "7267",
+    "name": "本田技研工業",
+    "change": 7.86
+  },
+  {
+    "rank": 43,
+    "code": "6971",
+    "name": "京セラ",
+    "change": 7.51
+  },
+  {
+    "rank": 32,
+    "code": "6526",
+    "name": "ソシオネクスト",
+    "change": 6.64
+  },
+  {
+    "rank": 7,
+    "code": "5801",
+    "name": "古河電気工業",
+    "change": 6.38
+  },
+  {
+    "rank": 22,
+    "code": "3436",
+    "name": "ＳＵＭＣＯ",
+    "change": 6.23
+  },
+  {
+    "rank": 24,
+    "code": "4004",
+    "name": "レゾナックＨＤ",
+    "change": 6.14
   },
   {
     "rank": 8,
     "code": "6857",
     "name": "アドバンテスト",
-    "change": 4.77
-  },
-  {
-    "rank": 42,
-    "code": "5201",
-    "name": "ＡＧＣ",
-    "change": 4.46
+    "change": 5.64
   },
   {
     "rank": 9,
     "code": "4062",
     "name": "イビデン",
-    "change": 4.45
-  },
-  {
-    "rank": 19,
-    "code": "6501",
-    "name": "日立製作所",
-    "change": 4.15
-  },
-  {
-    "rank": 34,
-    "code": "6954",
-    "name": "ファナック",
-    "change": 3.61
-  },
-  {
-    "rank": 21,
-    "code": "6762",
-    "name": "ＴＤＫ",
-    "change": 3.53
+    "change": 5.18
   },
   {
     "rank": 36,
-    "code": "4063",
-    "name": "信越化学工業",
-    "change": 3.52
-  },
-  {
-    "rank": 24,
-    "code": "3436",
-    "name": "ＳＵＭＣＯ",
-    "change": 3.17
-  },
-  {
-    "rank": 1,
-    "code": "285A",
-    "name": "キオクシアＨＤ",
-    "change": 2.21
-  },
-  {
-    "rank": 41,
-    "code": "6861",
-    "name": "キーエンス",
-    "change": 2.12
-  },
-  {
-    "rank": 27,
-    "code": "7203",
-    "name": "トヨタ自動車",
-    "change": 1.95
-  },
-  {
-    "rank": 3,
-    "code": "6981",
-    "name": "村田製作所",
-    "change": 1.71
-  },
-  {
-    "rank": 23,
-    "code": "8411",
-    "name": "みずほ",
-    "change": 1.63
-  },
-  {
-    "rank": 50,
-    "code": "6503",
-    "name": "三菱電機",
-    "change": 1.57
-  },
-  {
-    "rank": 20,
-    "code": "8316",
-    "name": "三井住友",
-    "change": 1.23
-  },
-  {
-    "rank": 14,
-    "code": "8306",
-    "name": "三菱ＵＦＪ",
-    "change": 1.12
-  },
-  {
-    "rank": 16,
-    "code": "7011",
-    "name": "三菱重工業",
-    "change": 1.0
-  },
-  {
-    "rank": 35,
-    "code": "6098",
-    "name": "リクルートＨＤ",
-    "change": 0.09
-  },
-  {
-    "rank": 44,
-    "code": "7012",
-    "name": "川崎重工業",
-    "change": -0.27
+    "code": "6954",
+    "name": "ファナック",
+    "change": 5.1
   },
   {
     "rank": 5,
     "code": "6976",
     "name": "太陽誘電",
-    "change": -0.49
+    "change": 4.71
   },
   {
-    "rank": 26,
-    "code": "7974",
-    "name": "任天堂",
-    "change": -0.51
+    "rank": 31,
+    "code": "4063",
+    "name": "信越化学工業",
+    "change": 4.38
   },
   {
-    "rank": 28,
-    "code": "6758",
-    "name": "ソニーグループ",
-    "change": -0.87
+    "rank": 17,
+    "code": "8411",
+    "name": "みずほ",
+    "change": 4.33
+  },
+  {
+    "rank": 23,
+    "code": "6501",
+    "name": "日立製作所",
+    "change": 4.15
+  },
+  {
+    "rank": 4,
+    "code": "6981",
+    "name": "村田製作所",
+    "change": 3.86
   },
   {
     "rank": 25,
+    "code": "6762",
+    "name": "ＴＤＫ",
+    "change": 3.64
+  },
+  {
+    "rank": 18,
+    "code": "8316",
+    "name": "三井住友",
+    "change": 3.29
+  },
+  {
+    "rank": 42,
+    "code": "6861",
+    "name": "キーエンス",
+    "change": 3.17
+  },
+  {
+    "rank": 11,
+    "code": "8306",
+    "name": "三菱ＵＦＪ",
+    "change": 3.12
+  },
+  {
+    "rank": 14,
+    "code": "7011",
+    "name": "三菱重工業",
+    "change": 2.42
+  },
+  {
+    "rank": 35,
+    "code": "3110",
+    "name": "日東紡績",
+    "change": 2.24
+  },
+  {
+    "rank": 26,
+    "code": "7203",
+    "name": "トヨタ自動車",
+    "change": 2.23
+  },
+  {
+    "rank": 49,
+    "code": "6503",
+    "name": "三菱電機",
+    "change": 1.88
+  },
+  {
+    "rank": 45,
+    "code": "7012",
+    "name": "川崎重工業",
+    "change": 1.63
+  },
+  {
+    "rank": 1,
+    "code": "285A",
+    "name": "キオクシアＨＤ",
+    "change": 1.47
+  },
+  {
+    "rank": 44,
+    "code": "3687",
+    "name": "フィックスターズ",
+    "change": 1.33
+  },
+  {
+    "rank": 50,
+    "code": "8766",
+    "name": "東京海上",
+    "change": 1.29
+  },
+  {
+    "rank": 28,
+    "code": "7974",
+    "name": "任天堂",
+    "change": 0.85
+  },
+  {
+    "rank": 38,
+    "code": "6098",
+    "name": "リクルートＨＤ",
+    "change": 0.32
+  },
+  {
+    "rank": 33,
+    "code": "6758",
+    "name": "ソニーグループ",
+    "change": -0.76
+  },
+  {
+    "rank": 29,
     "code": "9983",
     "name": "ファーストリテ",
     "change": -1.12
   },
   {
-    "rank": 15,
-    "code": "5706",
-    "name": "三井金属",
-    "change": -1.94
+    "rank": 46,
+    "code": "6702",
+    "name": "富士通",
+    "change": -2.54
   },
   {
-    "rank": 37,
-    "code": "3110",
-    "name": "日東紡績",
-    "change": -2.19
+    "rank": 13,
+    "code": "5706",
+    "name": "三井金属",
+    "change": -2.64
   },
   {
     "rank": 2,
     "code": "9984",
     "name": "ソフトバンクグル",
-    "change": -2.56
+    "change": -3.26
   },
   {
-    "rank": 43,
-    "code": "6702",
-    "name": "富士通",
-    "change": -3.38
-  },
-  {
-    "rank": 45,
-    "code": "6701",
-    "name": "日本電気",
-    "change": -3.5
-  },
-  {
-    "rank": 17,
+    "rank": 20,
     "code": "7013",
     "name": "ＩＨＩ",
-    "change": -4.98
+    "change": -3.42
   },
   {
     "rank": 48,
-    "code": "3687",
-    "name": "フィックスターズ",
-    "change": -6.37
+    "code": "6701",
+    "name": "日本電気",
+    "change": -3.5
   }
 ]
