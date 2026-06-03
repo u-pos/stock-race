@@ -2,7 +2,6 @@ name: Update Stock Data
 
 on:
 schedule:
-# 日本時間 9:00〜15:55 = UTC 0:00〜6:55
 - cron: '*/5 0-6 * * 1-5'
 
 workflow_dispatch:
@@ -12,12 +11,10 @@ contents: write
 
 jobs:
 update:
-
-```
 runs-on: ubuntu-latest
 
+```
 steps:
-
   - name: Checkout
     uses: actions/checkout@v4
 
